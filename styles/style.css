@@ -729,58 +729,6 @@ main {
     color: #10b981;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact {
-        padding: 60px 20px;
-    }
-
-    .contact h2 {
-        font-size: 2.2rem;
-    }
-
-    .contact-intro {
-        font-size: 1.1rem;
-    }
-
-    .contact-form,
-    .contact-info {
-        padding: 20px;
-    }
-
-    .footer {
-        padding: 30px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-form,
-    .contact-info {
-        padding: 15px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 0.9rem;
-    }
-
-    .form-submit {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .footer-social img {
-        width: 28px;
-        height: 28px;
-    }
-}
 /* Responsive adjustments for mobile screens (max-width: 480px) */
 @media (max-width: 480px) {
     .navbar {
@@ -790,8 +738,9 @@ main {
     }
 
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
     }
 
     .logo {
@@ -801,18 +750,67 @@ main {
 
     .navbar h2 {
         font-size: 1.2em;
-        position: static;
-        transform: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
-        width: 100%;
-        margin: 10px 0;
+        margin: 0;
+    }
+
+    /* Hide checkbox */
+    .nav-toggle {
+        display: none;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-right: 15px;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #66FCF1;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Transform hamburger into X when checked */
+    .nav-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
     }
 
     .nav-links {
+        display: none; /* Hidden by default */
         flex-direction: column;
         align-items: center;
-        margin-right: 0;
-        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #0B0C10;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    /* Show nav-links when checkbox is checked */
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
     }
 
     .nav-links li {
@@ -824,6 +822,7 @@ main {
         font-size: 0.9em;
     }
 
+    /* Existing responsive styles for other sections */
     .hero {
         flex-direction: column;
         padding: 80px 15px 0;
