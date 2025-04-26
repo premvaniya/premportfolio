@@ -1257,37 +1257,40 @@ main {
     .contact-item a:hover {
         color: #10b981;
     }
-}
+}/* Footer Styles */
 .footer {
-    padding: 60px 20px;
-    background: #1f2937; /* Darker shade to contrast with #0B0C10 */
-    color: #f9fafb;
+    padding: 40px 20px;
+    background: #0B0C10; /* Matches main background for seamless integration */
+    color: #C5C6C7; /* Light gray text for readability */
     text-align: center;
     font-family: 'Sora', sans-serif;
     border-top: 3px solid transparent;
-    background: linear-gradient(#1f2937, #1f2937) padding-box,
-                linear-gradient(45deg, #7c3aed, #3b82f6) border-box;
+    background: linear-gradient(#0B0C10, #0B0C10) padding-box,
+                linear-gradient(45deg, #7c3aed, #3b82f6) border-box; /* Matches card gradients */
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-social a {
     display: inline-flex;
     align-items: center;
-    position: relative;
-    padding: 8px;
+    padding: 10px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
@@ -1295,7 +1298,7 @@ main {
 .footer-social a:hover {
     transform: translateY(-3px) scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15); /* Slightly brighter on hover */
 }
 
 .footer-social img {
@@ -1306,16 +1309,16 @@ main {
 }
 
 .footer-social a:hover img {
-    filter: brightness(1.2) saturate(1.2);
+    filter: brightness(1.2) saturate(1.2); /* Matches hover effects elsewhere */
 }
 
 .footer-text {
     font-size: 1rem;
-    margin: 15px 0;
-    color: #d1d5db;
+    color: #C5C6C7; /* Matches hero and about text color */
     font-family: 'Sora', sans-serif;
     font-weight: 400;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* Shine effect on social icons */
@@ -1339,19 +1342,42 @@ main {
     left: 100%;
 }
 
+/* Ensure footer stays at the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
 /* Responsive adjustments for mobile screens (max-width: 480px) */
 @media (max-width: 480px) {
     .footer {
-        padding: 40px 15px;
+        padding: 30px 15px;
+    }
+
+    .footer-container {
+        padding: 0 10px;
     }
 
     .footer-social {
-        gap: 20px;
-        margin-bottom: 20px;
+        gap: 15px;
+        margin-bottom: 15px;
     }
 
     .footer-social a {
-        padding: 6px;
+        padding: 8px;
         border-radius: 10px;
     }
 
@@ -1362,10 +1388,8 @@ main {
     }
 
     .footer-text {
-        font-size: 0.9rem;
-        margin: 10px 0;
+        font-size: 0.85rem;
         max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
 }
