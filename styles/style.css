@@ -42,7 +42,7 @@ body {
 .navbar h2 {
     margin: 0;
     position: absolute;
-    left: 44%; /* As per updated CSS */
+    left: 50%; /* As per updated CSS */
     transform: translateX(-50%);
     color: #f4f4f4;
     font-family: 'Manrope', sans-serif;
