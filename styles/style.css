@@ -591,6 +591,7 @@ main {
 
     /* Hero Section */
     .hero {
+        margin-top:200px;
         flex-direction: column;
         padding: 70px 15px 20px;
         gap: 25px;
