@@ -13,7 +13,7 @@ $conn = new mysqli($host, $user, $password);
 // Check connection
 if ($conn->connect_error) {
     $_SESSION['error'] = "Connection failed: " . $conn->connect_error;
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 $create_db = "CREATE DATABASE IF NOT EXISTS $database";
 if ($conn->query($create_db) === FALSE) {
     $_SESSION['error'] = "Database creation failed: " . $conn->error;
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -38,7 +38,7 @@ $create_table = "CREATE TABLE IF NOT EXISTS contacts (
 )";
 if ($conn->query($create_table) === FALSE) {
     $_SESSION['error'] = "Table creation failed: " . $conn->error;
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate inputs
     if (empty($name) || empty($email) || empty($message)) {
         $_SESSION['error'] = "All fields are required.";
-        header("Location: index.php");
+        header("Location: index.html");
         exit();
     }
 
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: success.php");
     } else {
         $_SESSION['error'] = "Failed to save message: " . $conn->error;
-        header("Location: index.php");
+        header("Location: index.html");
     }
 
     // Close connection
