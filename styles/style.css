@@ -1,4 +1,4 @@
-/* Importing Google Fonts */
+-/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;600&family=Syne:wght@700&display=swap');
 
 body {
@@ -726,7 +726,7 @@ main {
         background-color: #0B0C10;
         border-radius: 0 0 15px 15px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        padding: 15px 0;
+        padding: 5px 0;
         z-index: 999;
     }
 
@@ -735,12 +735,12 @@ main {
     }
 
     .nav-links li {
-        margin: 8px 0;
+        margin: 5px 0;
     }
 
     .nav-links a {
         font-size: 0.95em;
-        padding: 8px 15px;
+        padding: 8px 5px;
         color: #66FCF1;
         border-radius: 20px;
         transition: all 0.3s ease;
@@ -771,7 +771,7 @@ main {
 
     .hero-text p {
         font-size: 1em;
-        margin: 0 auto 20px;
+        margin: 0 auto 10px;
         max-width: 95%;
         line-height: 1.6;
         color: #C5C6C7;
