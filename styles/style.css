@@ -585,6 +585,7 @@ main {
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-left:300px;
     border: 3px solid transparent;
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)) padding-box,
                 linear-gradient(45deg, #7c3aed, #3b82f6) border-box;
